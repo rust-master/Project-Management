@@ -1,14 +1,14 @@
 <%= link_to 'Back', projects_path, class: 'btn btn-light mb-3' %>
-<div class="card">
+<div class="card mb-3">
   <div class="card-body">
     <h2 class="card-title d-flex justify-content-between mb-4">
       <span><%= @project.name %></span>
       <div>
-        <%= link_to 'Edit', edit_project_path(@project), class: 'btn btn-warning' %>
-        <%= link_to 'Destroy', @project, method: :delete, class: 'btn btn-danger', data: { confirm: 'Are you sure?' } %>
+        <%= link_to 'Edit', edit_project_path(@project), class: 'btn btn-light' %>
+        <%= link_to 'Destroy', @project, method: :delete, class: 'btn btn-secondary', data: { confirm: 'Are you sure?' } %>
       </div>
     </h2>
-    
+
     <div class="mb-4">
       <h6>Add task</h6>
       <%= bootstrap_form_for([@task.project, @task]) do |f| %>
@@ -43,15 +43,18 @@
     <h4>Tasks</h4>
     <% @project.tasks.each do |task| %>
       <% if task.persisted? %>
-        <div class="card">
+        <div class="card mb-3">
           <div class="card-body">
-            <span style="background-color:#0d6efd;padding-left:5px;padding-right:5px; border-radius:3px; color:#fff"><%= task.status %></span>
-            <h5 class="card-title d-flex justify-content-between mb-4">
-              <span><%= task.name %></span>
+            <div class="d-flex justify-content-between">
+              <span style="background-color:#0d6efd;padding-left:5px;padding-right:5px; border-radius:3px; color:#fff"><%= task.status %></span>
               <div>
-                <%= link_to 'Edit', edit_project_task_path(task.project, task), class: 'btn btn-warning btn-sm' %>
-                <%= link_to 'Destroy', [task.project, task], method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm' %>
+                <%= link_to 'Edit', edit_project_task_path(task.project, task), class: 'btn btn-light btn-sm' %>
+                <%= link_to 'Destroy', [task.project, task], method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-secondary btn-sm' %>
               </div>
+            </div>
+            <h5 class="card-title mb-2 mt-3">
+              <span><%= task.name %></span>
+
             </h5>
             <p><%= task.description %></p>
           </div>
