@@ -1,4 +1,4 @@
-<%= form_with(model: project) do |form| %>
+<%= bootstrap_form_for(@project) do |form| %>
   <% if project.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(project.errors.count, "error") %> prohibited this project from being saved:</h2>
@@ -11,17 +11,15 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :name %>
+  <div class="form-group" style="margin-top:10px;">
     <%= form.text_field :name %>
   </div>
 
-  <div class="field">
-    <%= form.label :description %>
+  <div class="form-group" style="margin-top:10px;">
     <%= form.text_area :description %>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="actions" style="margin-top:10px;">
+    <%= form.submit class: "btn btn-primary" %>
   </div>
 <% end %>
