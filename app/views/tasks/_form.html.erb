@@ -1,4 +1,4 @@
-<%= form_with(model: [@task.project, @task] ) do |f| %>
+<%= bootstrap_form_for([@task.project, @task]) do |f| %>
   <% if @task.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@task.errors.count, "error") %> prohibited this task from being saved:</h2>
@@ -11,19 +11,16 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br />
+  <div class="form-group" style="margin-top:10px;">
     <%= f.text_field :name %>
   </div>
-  <div class="field">
-    <%= f.label :description %><br />
+  <div class="form-group" style="margin-top:10px;">
     <%= f.text_area :description %>
   </div>
-  <div class="field">
-    <%= f.label :status %><br />
-    <%= f.select :status, Task::STATUS_OPTIONS %>
+  <div class="form-group" style="margin-top:10px;">
+    <%= f.select :status, Task::STATUS_OPTIONS, {} %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="actions" style="margin-top:10px;">
+    <%= f.submit class: 'btn btn-primary' %>
   </div>
 <% end %>
