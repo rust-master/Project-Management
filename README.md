@@ -2,7 +2,11 @@
 
 This is project management web application build on the Ruby on Rails
 
+### Projects
+
 <img src="HomePageProjects.PNG" alt="Home Page" />
+
+### Tasks
 
 <img src="tasks.PNG" alt="Home Page" />
 
