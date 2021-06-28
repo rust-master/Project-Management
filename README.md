@@ -4,6 +4,8 @@ This is project management web application build on the Ruby on Rails
 
 <img src="HomePageProjects.PNG" alt="Home Page" />
 
+<img src="HomePageProjects.PNG" alt="Home Page" />
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
