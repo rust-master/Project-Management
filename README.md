@@ -1,4 +1,4 @@
-# Project Managment
+# Project Management
 
 This is project management web application build on the Ruby on Rails
 
